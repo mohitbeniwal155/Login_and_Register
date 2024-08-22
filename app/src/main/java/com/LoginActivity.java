@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,6 +30,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.assessment.ForgetPasswordActivity;
 import com.example.assessment.MainActivity;
 import com.example.assessment.R;
 import com.example.assessment.RegisterActivity;
@@ -50,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     UtilService utilService;
     SharedPreference sharedPreference;
+    TextView forget_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,8 @@ public class LoginActivity extends AppCompatActivity {
         progressBar=findViewById(R.id.pgbar);
         email=findViewById(R.id.email);
         password=findViewById(R.id.password);
+        forget_btn=findViewById(R.id.forgotPasswordLink);
+
         utilService= new UtilService();
         sharedPreference = new SharedPreference(this);
 
@@ -92,6 +97,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ireg=new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(ireg);
+            }
+        });
+
+        forget_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ForgetPasswordActivity.class));
             }
         });
     }
