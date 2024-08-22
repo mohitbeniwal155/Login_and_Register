@@ -1,4 +1,4 @@
-package com;
+package com.example.assessment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,12 +30,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.assessment.ForgetPasswordActivity;
-import com.example.assessment.MainActivity;
-import com.example.assessment.R;
-import com.example.assessment.RegisterActivity;
-import com.example.assessment.SharedPreference;
-import com.example.assessment.UtilService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
